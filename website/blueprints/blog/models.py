@@ -1,7 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-db = SQLAlchemy()
-migrate = Migrate(None, db)
+from database import db
 
 class User(db.Model):
     __tablename__ = 'user'
@@ -14,3 +11,9 @@ class User(db.Model):
         return '<User: %r>' % self.username
 
 
+class Post(db.Model):
+    __tablename__ = 'post'
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.Date)
+    content = db.Column(db.String(500))
+    category = db.Column(db.String(20))

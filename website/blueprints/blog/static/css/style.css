@@ -1,0 +1,15 @@
+body{
+	background-color: #111;
+}
+
+#post-wrapper {
+	margin:auto;
+	clear: both;
+	display: block;
+	background-color:#555;
+}
+.post {
+	color: #ff;
+	border: 1px solid black;
+	width: 100%;
+}

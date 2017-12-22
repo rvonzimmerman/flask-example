@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+So much incredible content.
+{% include "form.html" %}A
+<div id = "post-wrapper">
+{% for post in posts %}
+	<div class="post">
+	{{ post.content }}
+	</div>
+{% endfor %}
+</div>
+
+{% endblock %}
+
+
+
