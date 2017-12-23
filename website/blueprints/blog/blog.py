@@ -12,7 +12,6 @@ blog = Blueprint('blog', __name__,
 
 @blog.route('/')
 def index():
-
     return render_template('blog.html',
                            author      = 'Robert',
                            description = 'A great site.',
@@ -23,7 +22,8 @@ def index():
 def post():
     content = Post(
         date     = datetime.datetime.utcnow(),
-        content  = request.form['post-content'],
+        title    = request.form['title'],
+        content  = request.form['content'],
         category = 'So much fun.')
     db.session.add(content)
     db.session.commit()

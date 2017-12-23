@@ -13,6 +13,7 @@ config = context.config
 fileConfig(config.config_file_name)
 logger = logging.getLogger('alembic.env')
 
+from website.blueprints.blog.models import Post, User
 # add your model's MetaData object here
 # for 'autogenerate' support
 # from myapp import mymodel
@@ -20,7 +21,9 @@ logger = logging.getLogger('alembic.env')
 from flask import current_app
 config.set_main_option('sqlalchemy.url',
                        current_app.config.get('SQLALCHEMY_DATABASE_URI'))
-target_metadata = current_app.extensions['migrate'].db.metadata
+from website.blueprints.blog.models import Post, User
+target_metadata = [current_app.extensions['migrate'].db.metadata,
+                   Post.metadata]
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
