@@ -1,15 +1,36 @@
 body{
-	background-color: #111;
+	background-color: #eee;
 }
 
 #post-wrapper {
 	margin:auto;
 	clear: both;
 	display: block;
-	background-color:#555;
+	background-color:#bbb;
 }
 .post {
-	color: #ff;
+	color: #333;
 	border: 1px solid black;
 	width: 100%;
+	padding: 10px;
+}
+
+#post-form {
+	width: 500px;
+	margin:auto;
+}
+
+#post-form textarea,
+#post-form button,
+#post-form h1,
+#post-form input 
+{
+	display:block;
+	clear:both;
+	width:100%;
+}
+
+#post-form h1 {
+	text-align: center;
+	font-size : 20px;
 }

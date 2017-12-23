@@ -2,13 +2,21 @@
 
 {% block content %}
 So much incredible content.
-{% include "form.html" %}A
+{% include "form.html" %}
 <div id = "post-wrapper">
-{% for post in posts %}
+	{% for post in posts %}
 	<div class="post">
-	{{ post.content }}
+		<div class="title">
+			{{ post.title }}
+		</div>
+		<div class="date">
+			{{ post.date }}
+		</div>
+		<div class="content">
+			{{ post.content }}
+		</div>
 	</div>
-{% endfor %}
+	{% endfor %}
 </div>
 
 {% endblock %}

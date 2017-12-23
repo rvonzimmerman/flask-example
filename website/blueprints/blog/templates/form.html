@@ -1,6 +1,8 @@
 <div id="post-form">
 	<form id="post-form" action="{{ url_for('.post') }}" method="post">
-		<span>Title: </span><input type="text" name="title">
+		<h1>Title</h1>
+		<input type="text" name="title">
+		<h1> Content </h1>
 		<textarea name="content" rows="3" cols="16"></textarea>
 		<button type="submit">
 			Submit post!
