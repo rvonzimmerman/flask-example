@@ -19,7 +19,6 @@ def index():
                            )
 
 @blog.route('/post', methods=['POST'])
-
 def post():
     content = Post(
         date     = datetime.datetime.utcnow(),
