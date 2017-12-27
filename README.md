@@ -1,5 +1,5 @@
 # Simple Flask Application
-##To get up and running, do the following:
+## To get up and running, do the following:
 
 * Install the requirements with:
 ```
@@ -9,12 +9,14 @@ pip install -r requirements.txt
 Alternatively, plug in your favorite db connector.
 
 * Apply the database migrations:
+
 ``
 flask db upgrade
 ``
 
 
 * Run the application with:
+
 ``
 FLASK_APP=web-start.py flask run
 ``
