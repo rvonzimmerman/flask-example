@@ -1,7 +1,7 @@
 from flask import current_app, Blueprint, \
     render_template, request, redirect, url_for
-from database import db
-from models import Post
+from website.database import db
+from .models import Post
 import datetime
 
 blog = Blueprint('blog', __name__,
