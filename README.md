@@ -2,9 +2,9 @@
 ## To get up and running, do the following:
 
 * Install the requirements with:
-```
-pip install -r requirements.txt
-```
+    ```
+    pip install -r requirements.txt
+    ```
 * Edit the `dev.cfg` file to point to a working mysql database.
 Alternatively, plug in your favorite db connector.
 
