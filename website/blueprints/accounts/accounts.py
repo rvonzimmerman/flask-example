@@ -1,13 +1,19 @@
 from flask import current_app, Blueprint, request
-from flask_restful import Api, Resource, url_for
+from flask_restful import Api, Resource, url_for, abort
+from flask_jwt_simple import JWTManager, create_jwt, get_jwt_identity, jwt_required
 from .models import User
 from website.database import db
 
 accounts = Blueprint('accounts', __name__,
                   url_prefix = '/accounts')
 api = Api(accounts)
+jwt = JWTManager()
 
 class Login(Resource):
+    @jwt_required
+    def get(self):
+        return {"Identity" : get_jwt_identity()}
+
     def post(self):
         username = request.json.get('username')
         password = request.json.get('password')
@@ -18,7 +24,11 @@ class Login(Resource):
         if user is None:
             abort(400)
 
-        return {'Success': user.verify_pass(password)}
+        if user.verify_pass(password):
+            return {'auth': create_jwt(identity=username)}
+        else:
+            abort(401)
+
 
 class Create(Resource):
     def post(self):
