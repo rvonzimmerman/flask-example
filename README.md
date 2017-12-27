@@ -10,16 +10,16 @@ Alternatively, plug in your favorite db connector.
 
 * Apply the database migrations:
 
-``
-flask db upgrade
-``
+    ``
+    flask db upgrade
+    ``
 
 
 * Run the application with:
 
-``
-FLASK_APP=web-start.py flask run
-``
+    ``
+    FLASK_APP=web-start.py flask run
+    ``
 
 * Currently, the available routes are `/blog` and `/accounts`. Check out the associated
 blueprints for how they work.
